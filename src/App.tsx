@@ -3,7 +3,7 @@ import "./App.css";
 import { ChatBotWidget } from "chatbot-widget-ui";
 
 function App() {
-  const [setMessages] = useState<string[]>([]);
+  const [messages, setMessages] = useState<string[]>([]);
 
   const customApiCall = async (message: string): Promise<string> => {
     const response = await fetch(
@@ -18,6 +18,7 @@ function App() {
     );
     const data = await response.json();
     console.log(data);
+    
     return data.response;
   };
 
@@ -30,9 +31,7 @@ function App() {
         chatbotName="Softy TunisianBot"
         isTypingMessage="Typing..."
         IncommingErrMsg="Oops! Something went wrong. Try again."
-        handleNewMessage={(newMessage) => {
-          setMessages((prevMessages) => [...prevMessages, newMessage]);
-        }}
+        handleNewMessage={setMessages}
         chatIcon={<div>O</div>}
       />
     </div>
