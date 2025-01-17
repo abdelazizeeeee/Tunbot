@@ -3,7 +3,7 @@ import "./App.css";
 import { ChatBotWidget } from "chatbot-widget-ui";
 
 function App() {
-  const [messages, setMessages] = useState<string[]>([]);
+  const [setMessages] = useState<string[]>([]);
 
   const customApiCall = async (message: string): Promise<string> => {
     const response = await fetch(
