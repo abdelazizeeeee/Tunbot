@@ -7,7 +7,7 @@ function App() {
 
   const customApiCall = async (message: string): Promise<string> => {
     const response = await fetch(
-      "https://daea-196-203-25-82.ngrok-free.app/api/bot/generate",
+      "https://09ec-196-203-25-82.ngrok-free.app/api/bot/generate",
       {
         method: "POST",
         headers: {
